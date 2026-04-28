@@ -53,13 +53,11 @@ nav ul li:hover {
 /* Startseite / Header */
 header {
     text-align: center;
-    padding: 40px 20px;   /* weniger seitliches Padding */
+    padding: 40px 20px;
     background: white;
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
     box-sizing: border-box;
 }
-
 
 .header-image {
     display: block;
@@ -69,6 +67,12 @@ header {
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.header-image-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 header h2 {
