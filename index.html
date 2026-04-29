@@ -30,16 +30,16 @@
         <div class="header-image-wrapper">
             <img src="images/moschee.png" alt="Moschee mit Rosengarten" class="header-image">
         </div>
-        <h2>Willkommen beim Bereket Kulturverein Berlin</h2>
-        <p>
+        <h2 data-i18n="welcome_title">Willkommen beim Bereket Kulturverein Berlin</h2>
+        <p data-i18n="welcome_text">
             Wir freuen uns, Sie auf unserer Webseite begrüßen zu dürfen.  
             Unser Verein widmet sich der islamischen Kultur, Bildung und Gemeinschaft.  
             Hier finden Sie Informationen zu Veranstaltungen, Günaydin gen und Aktivitäten.
         </p>
 
         <div class="btn-container">
-            <a class="btn" href="#veranstaltungen">Zu den Veranstaltungen</a>
-            <a class="btn" href="#schulungen">Zu den Schulungen</a>
+            <a class="btn" href="#veranstaltungen" data-i18n="btn_events">Zu den Veranstaltungen</a>
+            <a class="btn" href="#schulungen" data-i18n="btn_trainings">Zu den Schulungen</a>
         </div>
     </header>
 
@@ -77,6 +77,28 @@
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: "smooth" });
         }
+        
+    const translations = {
+    de: {
+        btn_events: "Zu den Veranstaltungen",
+        btn_trainings: "Zu den Schulungen"
+    },
+    tr: {
+        btn_events: "Etkinliklere Git",
+        btn_trainings: "Eğitimlere Git"
+    },
+    en: {
+        btn_events: "Go to Events",
+        btn_trainings: "Go to Trainings"
+    }
+};
+        function setLanguage(lang) {
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                el.textContent = translations[lang][key];
+    });
+}
+
     </script>
 
 </body>
