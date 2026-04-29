@@ -11,15 +11,19 @@
 <body>
 	<h1 class="basmala">﷽</h1>
     <!-- Navigation -->
-    <nav>
-        <div class="logo">Bereket Kulturverein Berlin</div>
-        <ul>
-            <li onclick="scrollToSection('start')">Startseite</li>
-            <li onclick="scrollToSection('veranstaltungen')">Veranstaltungen</li>
-            <li onclick="scrollToSection('schulungen')">Schulungen</li>
-            <li onclick="openLogin()">Login</li>
-        </ul>
-    </nav>
+    <nav class="navbar">
+    <div class="logo">Bereket Kulturverein Berlin</div>
+
+    <div class="actions">
+        <button class="login-btn" onclick="openLogin()">Login</button>
+
+        <div class="language-selector">
+            <button onclick="setLanguage('de')" title="Deutsch">🇩🇪</button>
+            <button onclick="setLanguage('tr')" title="Türkçe">🇹🇷</button>
+            <button onclick="setLanguage('en')" title="English">🇬🇧</button>
+        </div>
+    </div>
+</nav>
 
     <!-- Startseite -->
     <header id="start">
