@@ -65,7 +65,20 @@
     </div>
 
     <!-- JavaScript -->
-    <script>
+<script>
+function openLogin() {
+    document.getElementById("loginBox").style.display = "block";
+}
+
+function closeLogin() {
+    document.getElementById("loginBox").style.display = "none";
+}
+
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+/* ✅ ÜBERSETZUNGEN */
 const translations = {
     de: {
         welcome_title: "Willkommen beim Bereket Kulturverein Berlin",
@@ -96,10 +109,20 @@ const translations = {
     }
 };
 
+/* ✅ DAS WAR DER FEHLENDE TEIL */
+function setLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+}
+
+/* ✅ Standardsprache setzen */
 document.addEventListener("DOMContentLoaded", () => {
     setLanguage("de");
 });
-
 </script>
 </body>
 </html>
